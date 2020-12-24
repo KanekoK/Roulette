@@ -8,15 +8,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="canvas"></canvas>
-  <br>
-  <button id="run">run</button>
-  <button id="stop">stop</button>
+  <header>
+    <h1>あつまる忘年会</h1>
+  </header>
 
-  <div id="debug"></div>
+  <main>
+    <section class="roulette-area">
+      <div>
+        <canvas id="roulette01"></canvas>
+      </div>
 
-  <div id="labels"></div>
+      <div>
+        <canvas id="roulette02"></canvas>
+      </div>
+    </section>
 
-  <script src="main.js"></script>
+    <section class="button-area">
+      <button id="run">run</button>
+      <button id="stop">stop</button>
+    </section>
+
+
+    <div id="debug"></div>
+
+    <div id="labels"></div>
+  </main>
+
+  <script src="main01.js"></script>
+  <script src="main02.js"></script>
 </body>
 </html>
