@@ -1,14 +1,14 @@
 const roulette02 = document.getElementById("roulette02");
 const context02 = roulette02.getContext('2d');
 
-let center = {
+let center02 = {
     x: 150,
     y: 150
 };
 
-let radius = 100;
+let radius02 = 100;
 
-let data = [
+let data02 = [
     {
         name: "label1",
         color: '#FFCEBE',
@@ -91,51 +91,52 @@ let data = [
     }
 ];
 
-let sum_weight = 0;
-let unit_weight = 0;
-let stopFlag = false;
-let startFlag = false;
+let sum_weight02 = 0;
+let unit_weight02 = 0;
+let stopFlag02 = false;
+let startFlag02 = false;
 
 //
 // メイン処理
 //
-data.forEach(e => {
-    sum_weight += e.weight;
+data02.forEach(e => {
+    sum_weight02 += e.weight;
 })
-unit_weight = 360 / sum_weight;
+unit_weight02 = 360 / sum_weight02;
 
-init();
+init02();
 
-drawRoullet(0);
+drawRoullet2(0);
 
 
-function drawRoullet(offset) {
+function drawRoullet2(offset) {
     let uw_count = offset;
 
-    data.forEach(e => {
-        drawPie(center.x, center.y, uw_count, uw_count + unit_weight, radius, e.color);
-        uw_count += unit_weight;
+    data02.forEach(e => {
+        drawPie02(center02.x, center02.y, uw_count, uw_count + unit_weight02, radius02, e.color);
+        uw_count += unit_weight02;
     })
 }
 
 
-function runRoullet() {
+function runRoullet2() {
     let count = 1; //終了までのカウント
     let lastCell = "";
     let deg_counter = 0; // 角度のカウント
     let acceleration = 1;
 
     let timer = setInterval(function() {
+        console.log(timer);
 
         deg_counter += acceleration;
 
-        if (stopFlag) {
+        if (stopFlag02) {
             count++;
         }
 
         if (count < 1000) {
             acceleration = 1000 / (count);
-            drawRoullet(deg_counter);
+            drawRoullet2(deg_counter);
         } else {
             count = 0;
             clearInterval(timer);
@@ -148,8 +149,8 @@ function runRoullet() {
         let id = setTimeout(endEvent, 115);
         if (count > 9) {
             clearTimeout(id);
-            startFlag = false;
-            stopFlag = false;
+            startFlag02 = false;
+            stopFlag02 = false;
             let current_deg = 360 - Math.ceil((deg_counter - 90) % 360)
             let sum = 0;
             let _i = 0;
@@ -167,26 +168,15 @@ function runRoullet() {
 
 
 
-document.getElementById("run").addEventListener("click", function() {
-    // スタート連打を無効化
-    if (startFlag === false) {
-        runRoullet();
-        startFlag = true;
-    } else {
-        startFlag = false;
-    }
-
-});
-
 document.getElementById("stop").addEventListener("click", function() {
-    if (startFlag) {
-        stopFlag = true;
+    if (startFlag02) {
+        stopFlag02 = true;
     }
 });
 
 
 
-function init() {
+function init02() {
     roulette02.width = 300;
     roulette02.height = 300;
 
@@ -197,7 +187,7 @@ function init() {
     context02.putImageData(dst, 0, 0);
 }
 
-function drawPie(cx, cy, start_deg, end_deg, radius, color) {
+function drawPie02(cx, cy, start_deg, end_deg, radius, color) {
     let _start_deg = (360 - start_deg) * Math.PI / 180;
     let _end_deg = (360 - end_deg) * Math.PI / 180;
 
@@ -207,15 +197,15 @@ function drawPie(cx, cy, start_deg, end_deg, radius, color) {
     context02.arc(cx, cy, radius, _start_deg, _end_deg, true);
     context02.fill();
 
-    showArrow();
+    showArrow02();
 }
 
 
-function showArrow() {
+function showArrow02() {
     context02.beginPath();
-    context02.moveTo(center.x, center.y - radius);
-    context02.lineTo(center.x + 10, center.y - radius - 10);
-    context02.lineTo(center.x - 10, center.y - radius - 10);
+    context02.moveTo(center02.x, center02.y - radius02);
+    context02.lineTo(center02.x + 10, center02.y - radius02 - 10);
+    context02.lineTo(center02.x - 10, center02.y - radius02 - 10);
     context02.closePath();
     context02.stroke();
     context02.fillStyle = "rgba(40,40,40)";

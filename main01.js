@@ -101,31 +101,33 @@ let startFlag01 = false;
 //
 data01.forEach(e => {
     sum_weight01 += e.weight;
-})
-unit_weight01 = 360 / sum_weight01;
+  })
+  unit_weight01 = 360 / sum_weight01;
+  
+  init01();
+  
+  drawRoullet1(0);
 
-init();
 
-drawRoullet(0);
-
-
-function drawRoullet(offset) {
+function drawRoullet1(offset) {
     let uw_count = offset;
 
     data01.forEach(e => {
-        drawPie(center01.x, center01.y, uw_count, uw_count + unit_weight01, radius01, e.color);
+        drawPie01(center01.x, center01.y, uw_count, uw_count + unit_weight01, radius01, e.color);
         uw_count += unit_weight01;
     })
 }
 
 
-function runRoullet() {
+function runRoullet1() {
+    console.log('OKOK');
     let count = 1; //終了までのカウント
     let lastCell = "";
     let deg_counter = 0; // 角度のカウント
     let acceleration = 1;
 
     let timer = setInterval(function() {
+        console.log(timer);
 
         deg_counter += acceleration;
 
@@ -135,7 +137,7 @@ function runRoullet() {
 
         if (count < 1000) {
             acceleration = 1000 / (count);
-            drawRoullet(deg_counter);
+            drawRoullet1(deg_counter);
         } else {
             count = 0;
             clearInterval(timer);
@@ -166,27 +168,7 @@ function runRoullet() {
 }
 
 
-
-document.getElementById("run").addEventListener("click", function() {
-    // スタート連打を無効化
-    if (startFlag01 === false) {
-        runRoullet();
-        startFlag01 = true;
-    } else {
-        startFlag01 = false;
-    }
-
-});
-
-document.getElementById("stop").addEventListener("click", function() {
-    if (startFlag01) {
-        stopFlag01 = true;
-    }
-});
-
-
-
-function init() {
+function init01() {
     roulette01.width = 300;
     roulette01.height = 300;
 
@@ -197,7 +179,7 @@ function init() {
     context01.putImageData(dst, 0, 0);
 }
 
-function drawPie(cx, cy, start_deg, end_deg, radius01, color) {
+function drawPie01(cx, cy, start_deg, end_deg, radius01, color) {
     let _start_deg = (360 - start_deg) * Math.PI / 180;
     let _end_deg = (360 - end_deg) * Math.PI / 180;
 
@@ -207,11 +189,11 @@ function drawPie(cx, cy, start_deg, end_deg, radius01, color) {
     context01.arc(cx, cy, radius01, _start_deg, _end_deg, true);
     context01.fill();
 
-    showArrow();
+    showArrow01();
 }
 
 
-function showArrow() {
+function showArrow01() {
     context01.beginPath();
     context01.moveTo(center01.x, center01.y - radius01);
     context01.lineTo(center01.x + 10, center01.y - radius01 - 10);
