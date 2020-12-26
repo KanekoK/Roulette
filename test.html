@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="bootstrap.css"></link>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
+  <link rel="stylesheet" href="bootstrap-responsive.css"></link>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
+  <link rel="stylesheet" href="demo.css"></link>
+</head>
+<body>
+  
+  <div class="roulette_container" >
+    <div class="roulette" style="display:none;">
+      <img src="star.png"/>
+      <img src="flower.png"/>
+      <img src="coin.png"/>
+      <img src="mshroom.png"/>
+      <img src="chomp.png"/>
+    </div>
+  </div>
+  <div class="btn_container">
+    <p>
+    <button class="btn btn-large btn-primary start"> START </button>
+    <button class="stop btn-large btn btn-warning" onclick="GetRandomNumber();"> STOP </button>
+    </p>
+  </div>	
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+  <script src="roulette.js"></script>
+   <script>
+    jQuery(function(){    
+    // initialize!
+    var option = {
+      speed : 10,
+      duration : 5,
+                  stopImageNumber : 0,
+    }
+    $('div.roulette').roulette(option);	
+  
+    // START!
+    $('.start').click(function(){
+      $('div.roulette').roulette('start');	
+    });
+  
+    // STOP!
+    $('.stop').click(function(){
+      $('div.roulette').roulette('stop');	
+    });
+     });
+  
+   </script>
+</body>
+</html>

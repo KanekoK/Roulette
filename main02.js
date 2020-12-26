@@ -126,7 +126,6 @@ function runRoullet2() {
     let acceleration = 1;
 
     let timer = setInterval(function() {
-        console.log(timer);
 
         deg_counter += acceleration;
 
@@ -154,26 +153,17 @@ function runRoullet2() {
             let current_deg = 360 - Math.ceil((deg_counter - 90) % 360)
             let sum = 0;
             let _i = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (unit_weight * sum < current_deg && current_deg < unit_weight * (sum + data[i].weight)) {
-                    console.log(data[i].name);
-                    document.getElementById("debug").innerHTML = data[i].name;
+            for (let i = 0; i < data02.length; i++) {
+                if (unit_weight02 * sum < current_deg && current_deg < unit_weight02 * (sum + data02[i].weight)) {
+                    console.log(data02[i].name);
+                    document.getElementById("labels2").innerHTML = data02[i].name;
                     break;
                 }
-                sum += data[i].weight;
+                sum += data02[i].weight;
             }
         }
     };
 }
-
-
-
-document.getElementById("stop").addEventListener("click", function() {
-    if (startFlag02) {
-        stopFlag02 = true;
-    }
-});
-
 
 
 function init02() {

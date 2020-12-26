@@ -120,14 +120,12 @@ function drawRoullet1(offset) {
 
 
 function runRoullet1() {
-    console.log('OKOK');
     let count = 1; //終了までのカウント
     let lastCell = "";
     let deg_counter = 0; // 角度のカウント
     let acceleration = 1;
 
     let timer = setInterval(function() {
-        console.log(timer);
 
         deg_counter += acceleration;
 
@@ -158,7 +156,7 @@ function runRoullet1() {
             for (let i = 0; i < data01.length; i++) {
                 if (unit_weight01 * sum < current_deg && current_deg < unit_weight01 * (sum + data01[i].weight)) {
                     console.log(data01[i].name);
-                    document.getElementById("debug").innerHTML = data01[i].name;
+                    document.getElementById("labels1").innerHTML = data01[i].name;
                     break;
                 }
                 sum += data01[i].weight;
