@@ -2,33 +2,13 @@ const roulette01 = document.getElementById("roulette01");
 const context01 = roulette01.getContext('2d');
 
 let center01 = {
-    x: 150,
-    y: 150
+    x: 300,
+    y: 300
 };
 
-let radius01 = 100;
+let radius01 = 200;
 
 let data01 = [
-    {
-        name: "赤",
-        color: '#dc3545',
-        weight: 1
-    },
-    {
-        name: "青",
-        color: '#007bff',
-        weight: 1
-    },
-    {
-        name: "黄",
-        color: '#ffc107',
-        weight: 1
-    },
-    {
-        name: "緑",
-        color: '#28a745',
-        weight: 1
-    },
     {
         name: "赤",
         color: '#dc3545',
@@ -167,8 +147,8 @@ function runRoullet1() {
 
 
 function init01() {
-    roulette01.width = 300;
-    roulette01.height = 300;
+    roulette01.width = 600;
+    roulette01.height = 600;
 
     let dst = context01.createImageData(roulette01.width, roulette01.height);
     for (let i = 0; i < dst.data.length; i++) {

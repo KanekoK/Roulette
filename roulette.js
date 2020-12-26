@@ -149,6 +149,7 @@
 		}
 
 		var stop = function(option) {
+			document.getElementById('stopSound').play();
 			if (!p.isSlowdown) {
 				if (option) {
 					var stopImageNumber = Number(option.stopImageNumber);

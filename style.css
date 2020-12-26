@@ -1,11 +1,30 @@
 body {
-  background-color: #fafafa;
-}
-
-canvas {
   background-color: #fff;
 }
 
-.roulette-area {
+
+.roulette-group {
+  margin-top: 50px;
   display: flex;
+}
+.roulette-area {
+  width: 50%;
+  text-align: center;
+}
+
+.roulette-inner img {
+  margin: auto;
+  width: 50%;
+}
+
+.info-area {
+  display: flex;
+}
+.left, .right {
+  text-align: center;
+  width: 40%;
+}
+.center {
+  text-align: center;
+  width: 20%;
 }
