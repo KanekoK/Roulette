@@ -10,83 +10,83 @@ let radius01 = 100;
 
 let data01 = [
     {
-        name: "label1",
-        color: '#FFCEBE',
+        name: "赤",
+        color: '#dc3545',
         weight: 1
     },
     {
-        name: "label2",
-        color: '#CEFFBE',
+        name: "青",
+        color: '#007bff',
         weight: 1
     },
     {
-        name: "label3",
-        color: '#CEBEFF',
+        name: "黄",
+        color: '#ffc107',
         weight: 1
     },
     {
-        name: "label4",
-        color: '#FDED9E',
+        name: "緑",
+        color: '#28a745',
         weight: 1
     },
     {
-        name: "label1",
-        color: '#FFCEBE',
+        name: "赤",
+        color: '#dc3545',
         weight: 1
     },
     {
-        name: "label2",
-        color: '#CEFFBE',
+        name: "青",
+        color: '#007bff',
         weight: 1
     },
     {
-        name: "label3",
-        color: '#CEBEFF',
+        name: "黄",
+        color: '#ffc107',
         weight: 1
     },
     {
-        name: "label4",
-        color: '#FDED9E',
+        name: "緑",
+        color: '#28a745',
         weight: 1
     },
     {
-        name: "label1",
-        color: '#FFCEBE',
+        name: "赤",
+        color: '#dc3545',
         weight: 1
     },
     {
-        name: "label2",
-        color: '#CEFFBE',
+        name: "青",
+        color: '#007bff',
         weight: 1
     },
     {
-        name: "label3",
-        color: '#CEBEFF',
+        name: "黄",
+        color: '#ffc107',
         weight: 1
     },
     {
-        name: "label4",
-        color: '#FDED9E',
+        name: "緑",
+        color: '#28a745',
         weight: 1
     },
     {
-        name: "label1",
-        color: '#FFCEBE',
+        name: "赤",
+        color: '#dc3545',
         weight: 1
     },
     {
-        name: "label2",
-        color: '#CEFFBE',
+        name: "青",
+        color: '#007bff',
         weight: 1
     },
     {
-        name: "label3",
-        color: '#CEBEFF',
+        name: "黄",
+        color: '#ffc107',
         weight: 1
     },
     {
-        name: "label4",
-        color: '#FDED9E',
+        name: "緑",
+        color: '#28a745',
         weight: 1
     }
 ];
