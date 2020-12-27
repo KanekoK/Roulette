@@ -22,6 +22,17 @@ $(function(){
 			$('.stop').attr('disabled', 'true');
 		},
 		stopCallback : function($stopElm) {
+			console.log(p['stopImageNumber'])
+			if (p['stopImageNumber'] === 0) {
+				$('#part-label').text('右手');
+			} else if (p['stopImageNumber'] === 1) {
+				$('#part-label').text('左手');
+			} else if (p['stopImageNumber'] === 2) {
+				$('#part-label').text('右足');
+			} else {
+				$('#part-label').text('左足');
+			}
+			console.log(p['stopImageNumber'])
 			appendLogMsg('stop');
 			$('#speed, #duration').slider('enable');
 			$('#stopImageNumber').spinner('enable');
@@ -33,7 +44,6 @@ $(function(){
 	var rouletter = $('div.roulette');
 	rouletter.roulette(p);	
 	$('.stop').click(function(){
-		console.log('stop');
 		var stopImageNumber = -1;
 		if(stopImageNumber == "") {
 			stopImageNumber = null;
@@ -45,11 +55,16 @@ $(function(){
 		rouletter.roulette('start');	
 	});
 
+
 	var updateParamater = function(){
-		p['speed'] = 10;
-		p['duration'] = Number($('.duration_param').eq(0).text());
-		p['stopImageNumber'] = -1;
-		rouletter.roulette('option', p);	
+		$('#run').on('click', () => {
+			let randomStopImageNumber = Math.floor( Math.random() * 4);
+			p['speed'] = 16;
+			p['duration'] = Number($('.duration_param').eq(0).text());
+			p['stopImageNumber'] = randomStopImageNumber;
+			rouletter.roulette('option', p);
+		});
+
 	}
 	var updateSpeed = function(speed){
 		$('.speed_param').text(speed);
@@ -104,7 +119,7 @@ $(function(){
 		}
 	});
 	$('#stopImageNumber').spinner('value', 0);
-	updateStopImageNumber($('#stopImageNumber').spinner('value'));		
+	updateStopImageNumber($('#stopImageNumber').spinner('value'));	
 
 	$('.image_sample').children().click(function(){
 		var stopImageNumber = $(this).attr('data-value');

@@ -2,8 +2,8 @@ const roulette01 = document.getElementById("roulette01");
 const context01 = roulette01.getContext('2d');
 
 let center01 = {
-    x: 300,
-    y: 300
+    x: 250,
+    y: 250
 };
 
 let radius01 = 200;
@@ -113,8 +113,9 @@ function runRoullet1() {
             count++;
         }
 
-        if (count < 1000) {
-            acceleration = 1000 / (count);
+        // ストップを押してから止まるまでの秒数制御
+        if (count < 500) {
+            acceleration = 500 / (count);
             drawRoullet1(deg_counter);
         } else {
             count = 0;
@@ -135,8 +136,8 @@ function runRoullet1() {
             let _i = 0;
             for (let i = 0; i < data01.length; i++) {
                 if (unit_weight01 * sum < current_deg && current_deg < unit_weight01 * (sum + data01[i].weight)) {
-                    console.log(data01[i].name);
                     document.getElementById("labels1").innerHTML = data01[i].name;
+                    document.getElementById("color-result").style.backgroundColor = data01[i].color;
                     break;
                 }
                 sum += data01[i].weight;
@@ -147,8 +148,8 @@ function runRoullet1() {
 
 
 function init01() {
-    roulette01.width = 600;
-    roulette01.height = 600;
+    roulette01.width = 500;
+    roulette01.height = 500;
 
     let dst = context01.createImageData(roulette01.width, roulette01.height);
     for (let i = 0; i < dst.data.length; i++) {

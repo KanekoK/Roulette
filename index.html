@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>望年の刃</title>
 
   <link rel="stylesheet" href="bootstrap.css"></link>
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
@@ -20,18 +20,26 @@
   <main class="main">
     <div class="roulette-group">
       <section class="roulette-area color-area">
+        <p class="theme">色</p>
         <div>
           <canvas id="roulette01"></canvas>
+        </div>
+
+        <div id="color-result" class="color-result">
+          <p id="labels1" class="color-label"></p>
         </div>
       </section>
 
       <section class="roulette-area roulette_container" >
+        <p class="theme">部位</p>
         <div class="roulette" style="display:none;">
-          <img src="img/star.png"/>
-          <img src="img/flower.png"/>
-          <img src="img/coin.png"/>
-          <img src="img/mshroom.png"/>
-          <img src="img/chomp.png"/>
+          <img src="img/star.png"/> <!-- 右手 -->
+          <img src="img/flower.png"/> <!-- 左手 -->
+          <img src="img/coin.png"/> <!-- 右足 -->
+          <img src="img/mshroom.png"/> <!-- 左足 -->
+        </div>
+        <div id="part-result" class="part-result">
+          <p id="part-label" class="part-label"></p>
         </div>
       </section>
     </div>
@@ -39,8 +47,6 @@
     <div class="info-area">
       <div class="left">
         <button id="stop" class="btn-large btn btn-warning">STOP</button>
-
-        <div id="labels1"></div>
       </div>
 
       <div class="center">

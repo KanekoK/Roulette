@@ -3,7 +3,7 @@
 		var defaultSettings = {
 			maxPlayCount : null, // x >= 0 or null
 			speed : 10, // x > 0
-			stopImageNumber : null, // x >= 0 or null or -1
+			stopImageNumber : 0, // x >= 0 or null or -1
 			rollCount : 3, // x >= 0
 			duration : 3, //(x second)
 			stopCallback : function() {
@@ -18,7 +18,7 @@
 			$rouletteTarget : null,
 			imageCount : null,
 			$images : null,
-			originalStopImageNumber : null,
+			originalStopImageNumber : 0,
 			totalHeight : null,
 			topPosition : 0,
 
