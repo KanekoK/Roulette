@@ -2,16 +2,11 @@ body {
 	padding-top: 60px;
 	padding-bottom: 40px;
 }
-div.roulette {
-	margin-top: 35px;
-}
 div.roulette-inner {
 	left : 33px;
 }
 
 
-div.roulette { 
-}
 
 div.roulette_container {
 	background-color:rgb(253, 252, 253);

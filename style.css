@@ -18,19 +18,20 @@ body {
 
 .roulette-inner img {
   margin: auto;
-  width: 50%;
+  width: 500px;
+  height: 500px;
 }
 
 .info-area {
   display: flex;
+  justify-content: center;
 }
 .left, .right {
   text-align: center;
-  width: 40%;
 }
 .center {
   text-align: center;
-  width: 20%;
+  margin: 0 80px;
 }
 
 .color-result {
