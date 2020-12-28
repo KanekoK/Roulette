@@ -16,17 +16,23 @@ body {
   text-align: center;
 }
 
+.roulette {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .roulette-inner img {
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 470px;
+  height: 470px;
 }
 
 .info-area {
   display: flex;
   justify-content: center;
 }
-.left, .right {
+.left,
+.right {
   text-align: center;
 }
 .center {
